@@ -1,13 +1,21 @@
 const router = require('express').Router()
 module.exports = router
+const Twit = require('twit')
 
-/**
- * This needs to be able to hit an endpoint on the twitter api (test request in secrets) to bring back a list of tweets
- */
-router.get('/', async (req, res, next) => {
+const T = new Twit({
+  consumer_key: 'PGjwgSsQKrE5ytoR6Dwr7R3Z6',
+  consumer_secret: '6U7ttBPv2RhCdHyMFsDPTIpBj9BDmoUWfT166XPxJLmA9ZlQPW',
+  app_only_auth: true
+})
+
+T.get('followers/list', {screen_name: 'Gunsmokeisdead'}, function(
+  err,
+  data,
+  response
+) {
   try {
-    let data = ''
+    console.log(data, 'THAR BE THE DATA MATY')
   } catch (error) {
-    next(error)
+    console.log(err)
   }
 })
