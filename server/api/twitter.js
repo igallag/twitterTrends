@@ -3,6 +3,11 @@
 const Twit = require('twit')
 module.exports = Twit
 
+/**
+ * might try using the T variable inside the express router so it
+ * isnt called everytime
+ */
+
 const T = new Twit({
   consumer_key: 'PGjwgSsQKrE5ytoR6Dwr7R3Z6',
   consumer_secret: '6U7ttBPv2RhCdHyMFsDPTIpBj9BDmoUWfT166XPxJLmA9ZlQPW',
